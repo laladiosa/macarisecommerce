@@ -7,7 +7,7 @@ const Nav = () => {
     return (
 
         <nav>
-            <div> <h2>HIHOMARKET</h2></div>
+            <div> <h2 className="logo">HIHOMARKET</h2></div>
                 <ul>
                     <li><p>Home</p></li>
                     <li><p>About</p></li>
