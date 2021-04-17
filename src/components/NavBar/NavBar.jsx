@@ -12,7 +12,7 @@ const Nav = () => {
                     <li><p>Home</p></li>
                     <li><p>About</p></li>
                     <li><p>Products</p></li>
-                    <li><p>Contacto</p></li>
+                    <li><p>Contact</p></li>
                 </ul>
                 <CartWidget/>
         </nav>
