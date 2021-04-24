@@ -5,15 +5,14 @@ import './style.css'
 
 function App() {
   return (
+    <>
     <div className="App">
       <header className="">
       <Nav></Nav>
       </header>
-
-      
-      <ItemListContainer greeting="Bienvenido a mi carrito de compras!"/>
     </div>
-
+      <ItemListContainer/>
+    </>
 
     //------------ CLASE 02 y 03 -------------------- //
     // <div className="App">

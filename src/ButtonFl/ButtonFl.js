@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ButtonFl = ({text, color, padding, suma}) => {
+const ButtonFl = ({text, color, padding, suma }) => {
     
 
     return(
