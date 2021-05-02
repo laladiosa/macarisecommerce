@@ -1,59 +1,27 @@
 import React, {useState, useEffect} from 'react'
 import './ItemListContainer.css'
 import ItemList from '../components/Items/ItemList'
+import { useParams } from 'react-router-dom'
 import loader from '../img/loader.gif'
+import getdata from '../database/data'
 
 export default function ItemListContainer() {
 
     const [arrayItems, setArrayItems] = useState([])
     
+    const { categoryId } = useParams()
+
     useEffect(()=>{
         let listaNueva = new Promise((resolve, reject) => {
-            const catalogo = [
-                {
-                    id: 1,
-                    imag: '/images/birra.jpg',
-                    description: 'birra destacada',
-                    title: 'lala',
-                    price: '300',
-                    stockIni: '35'
-        
-                },
-                {
-                    id: '2',
-                    imag:'./images/birra.jpg',
-                    description: 'birra destacada',
-                    title: 'lala',
-                    price: '300',
-                    stockIni: '23'
-                
-                },
-                {
-                    id: '3',
-                    imag:'/images/botella.png',
-                    description: 'birra destacada',
-                    title: 'lala',
-                    price: '300',
-                    stockIni: '20'
-                },
-                {
-                    id: '4',
-                    imag:'/images/botella2.jpeg',
-                    description: 'birra destacada',
-                    title: 'lala',
-                    price: '300',
-                    stockIni: '30'
-                }
-            ];
         
             setTimeout(() =>{
-                resolve(catalogo)
+                resolve(getdata())
             }, 2000)
         })
     
         listaNueva.then((res)=>{
             // console.log(res);
-            setArrayItems(res);
+            (categoryId === undefined) ? setArrayItems(res) : setArrayItems(res.filter(e => e.category === categoryId));
         })
         .catch(()=>{
             console.log("OJO, hay un problema")
@@ -62,10 +30,11 @@ export default function ItemListContainer() {
             console.log("Error finalizado, bye")
         })
 
-    }, [])
+    }, [categoryId])
     return(
-        <div classNam="contenedor">
-            <div className="row">
+        <div className="contenedor">
+            <div className="catalogo">Catalogo</div>
+            <div className="container contenedor_productos">
                 {arrayItems.length > 0 ? <ItemList productos={arrayItems}/> : <img src={loader} alt="product" className="loader"/> }
             </div>
         </div>

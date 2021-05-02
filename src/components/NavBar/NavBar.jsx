@@ -1,5 +1,6 @@
 import React from 'react';
 import CartWidget from '../CartWidget/CartWidget';
+import { Link } from 'react-router-dom'
 import './NavBar.css'
 
 
@@ -9,10 +10,10 @@ const Nav = () => {
         <nav>
             <div> <h2 className="logo">HIHOMARKET</h2></div>
                 <ul>
-                    <li><p>Home</p></li>
-                    <li><p>About</p></li>
-                    <li><p>Products</p></li>
-                    <li><p>Contact</p></li>
+                    <li><Link to="/" className="menu">Home</Link></li>
+                    <li><Link to="" className="menu">About</Link></li>
+                    <li><Link to="" className="menu">Products</Link></li>
+                    <li><Link to="" className="menu">Contact</Link></li>
                 </ul>
                 <CartWidget/>
         </nav>
