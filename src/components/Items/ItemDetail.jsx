@@ -23,7 +23,7 @@ const ItemDetail = ({productos}) => {
                                        <span>${datos.price}</span>
                                    </div>
                                </div>
-                               <Link className="producto__ItemDetail" to={`/`}>Ver mas...</Link>
+
                                <div>
                                    <ItemCount stock={datos.stockIni}/>
                                </div>

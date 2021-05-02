@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import './ItemCount.css'
 import '../Items/Item.css'
+import {Link} from 'react-router-dom'
 
 const ItemCount = ({stock}) => {
     const [stockTotal, setStockTotal] = useState(stock);
@@ -28,8 +29,11 @@ const ItemCount = ({stock}) => {
         }
     }
     const add = () => {
-        // let className = 'btn'
-        // console.log("compraste" + stockIni);
+        if(stockIni > 0){
+            return (
+                alert('Agregaste : '+ stockIni + ' al carrito')
+            )
+        }
     }
     return (
         <>
@@ -41,7 +45,7 @@ const ItemCount = ({stock}) => {
             <span className="item-amount-plus" onClick={sumar}>+</span>
             </div>
         </div>
-        <a href="." className="item-btn" onClick={add}>Comprar</a>
+        <Link to="/" className="item-btn" onClick={add}>Comprar</Link>
         </>
     )
 }
