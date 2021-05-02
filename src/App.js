@@ -13,7 +13,7 @@ function App() {
       <Switch>
         <Route path="/" exact component={ItemListContainer} />
         <Route path="/cart" exact component={CartWidget} />
-        <Route path='/ItemDetailContainer' extact component={ItemDetailContainer}/>
+        <Route path='/ItemDetailContainer/:category' extact component={ItemDetailContainer}/>
       </Switch>
     </BrowserRouter>
   );

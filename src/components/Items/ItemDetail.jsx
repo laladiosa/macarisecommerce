@@ -4,7 +4,6 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import ItemCount from '../Contador/ItemCount'
 import './Item.css'
-
 const ItemDetail = ({productos}) => {
     return ( 
         <React.Fragment>
@@ -24,7 +23,7 @@ const ItemDetail = ({productos}) => {
                                        <span>${datos.price}</span>
                                    </div>
                                </div>
-                               <Link className="producto__ItemDetail" to={`/ItemDetailContainer`}>Ver mas...</Link>
+                               <Link className="producto__ItemDetail" to={`/`}>Ver mas...</Link>
                                <div>
                                    <ItemCount stock={datos.stockIni}/>
                                </div>
